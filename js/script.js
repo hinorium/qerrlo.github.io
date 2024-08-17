@@ -1,6 +1,6 @@
 let typingInProgress = false;
 
-function generateName() {
+generateName = function() {
     if (typingInProgress) return;
 
     const names = [
@@ -118,7 +118,7 @@ function generateName() {
     typeWriter(randomName);
 }
 
-function typeWriter(text) {
+typeWriter = function(text) {
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = ''; // Очистить результат
     typingInProgress = true;
@@ -126,7 +126,7 @@ function typeWriter(text) {
     let i = 0;
     const speed = 100; // Скорость печатания
 
-    function type() {
+    type = function() {
         if (i < text.length) {
             resultElement.innerHTML = text.substring(0, i + 1) + '<span>|</span>';
             i++;

@@ -14,12 +14,12 @@
             background-color: #121212;
             margin: 0;
             color: #ecf0f1;
-            user-select: none; /* Запретить выделение текста всей страницы */
+            user-select: none;
         }
         .container {
             text-align: center;
             background: #1e1e1e;
-            padding: 20px; /* Уменьшаем отступы */
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             max-width: 400px;
@@ -30,15 +30,15 @@
             transform: translateY(-5px);
         }
         h1 {
-            margin: 15px 0; /* Уменьшаем отступы вокруг заголовка */
+            margin: 15px 0;
             color: #ecf0f1;
         }
         #result {
-            margin: 15px 0; /* Уменьшаем отступы вокруг результата */
+            margin: 15px 0;
             font-size: 1.2em;
             color: #bdc3c7;
-            min-height: 1.5em; /* Чтобы результат не прыгал при появлении текста */
-            user-select: text; /* Разрешить выделение текста */
+            min-height: 1.5em;
+            user-select: text;
         }
         .cursor {
             display: inline-block;
@@ -63,8 +63,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
-            user-select: none; /* Запретить выделение текста на кнопке */
-            margin: 5px; /* Добавим отступ между кнопками */
+            user-select: none;
+            margin: 5px;
         }
         button:hover {
             background-color: #2980b9;
@@ -76,13 +76,13 @@
             transform: scale(0.95);
         }
         .logo {
-            width: 150px; /* Увеличиваем размер логотипа */
+            width: 150px;
             height: auto;
-            margin-bottom: 15px; /* Уменьшаем отступ */
-            border-radius: 10px; /* Добавляем скругление углов */
-            pointer-events: none; /* Отключаем взаимодействие с изображением */
-            user-drag: none; /* Запрещаем перетаскивание изображения */
-            -webkit-user-drag: none; /* Запрещаем перетаскивание изображения для Safari */
+            margin-bottom: 15px;
+            border-radius: 10px;
+            pointer-events: none;
+            user-drag: none;
+            -webkit-user-drag: none;
         }
     </style>
 </head>

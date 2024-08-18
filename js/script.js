@@ -120,11 +120,11 @@ generateName = function() {
 
 typeWriter = function(text) {
     const resultElement = document.getElementById('result');
-    resultElement.innerHTML = ''; // Очистить результат
+    resultElement.innerHTML = '';
     typingInProgress = true;
 
     let i = 0;
-    const speed = 100; // Скорость печатания
+    const speed = 100;
 
     type = function() {
         if (i < text.length) {
@@ -132,7 +132,7 @@ typeWriter = function(text) {
             i++;
             setTimeout(type, speed);
         } else {
-            resultElement.innerHTML = text; // Убрать курсор после завершения
+            resultElement.innerHTML = text;
             typingInProgress = false;
         }
     }

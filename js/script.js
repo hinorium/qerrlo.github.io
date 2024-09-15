@@ -138,8 +138,4 @@ typeWriter = function(text) {
     }
 
     type(text);
-
-    sleep(10000);
-
-    type("Нажмите кнопку для генерации имени");
 }

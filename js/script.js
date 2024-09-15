@@ -126,16 +126,16 @@ typeWriter = function(text) {
     let i = 0;
     const speed = 100;
 
-    let type = function(message) {
+    let type = function() {
         if (i < text.length) {
-            resultElement.innerHTML = message.substring(0, i + 1) + '<span>|</span>';
+            resultElement.innerHTML = text.substring(0, i + 1) + '<span>|</span>';
             i++;
             setTimeout(type, speed);
         } else {
-            resultElement.innerHTML = message;
+            resultElement.innerHTML = text;
             typingInProgress = false;
         }
     }
 
-    type(text);
+    type();
 }

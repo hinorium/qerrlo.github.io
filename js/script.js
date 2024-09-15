@@ -126,16 +126,20 @@ typeWriter = function(text) {
     let i = 0;
     const speed = 100;
 
-    type = function() {
+    let type = function(message) {
         if (i < text.length) {
-            resultElement.innerHTML = text.substring(0, i + 1) + '<span>|</span>';
+            resultElement.innerHTML = message.substring(0, i + 1) + '<span>|</span>';
             i++;
             setTimeout(type, speed);
         } else {
-            resultElement.innerHTML = text;
+            resultElement.innerHTML = message;
             typingInProgress = false;
         }
     }
 
-    type();
+    type(text);
+
+    sleep(10000);
+
+    type("Сгенерировать Имя");
 }

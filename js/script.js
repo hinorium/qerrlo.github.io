@@ -3,7 +3,8 @@ let typingInProgress = false;
 generateName = function() {
     if (typingInProgress) return;
 
-    const names = [
+    const databases = {
+        names = [
         "Александр", "Мария", "Дмитрий", "Екатерина", "Сергей",
         "Анна", "Иван", "Ольга", "Максим", "Елена",
         "Анастасия", "Николай", "Татьяна", "Владимир", "Ксения",
@@ -111,9 +112,11 @@ generateName = function() {
         "Денис", "Тимур", "Григорий", "Леонид", "Зоя",
         "Алина", "Вероника", "Филипп", "Людмила", "Агата",
         "Светлана", "Александр", "Мирослава", "Эллада", "Милослава"
-    ];
+        ];
+    data_names2 = ["Марат пидорас", "Вова гей", "Глеб лизал Ане", "Вова делал КУНИ ЛЕРЕ!"];
+}
 
-    const randomIndex = Math.floor(Math.random() * names.length);
+    const randomIndex = Math.floor(Math.random() * databases.data_names2.length);
     const randomName = names[randomIndex];
     typeWriter(randomName);
 }

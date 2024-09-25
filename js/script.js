@@ -115,7 +115,7 @@ generateName = function() {
     const data2 = ["Марат пидорас", "Вова гей", "Глеб лизал Ане", "Вова делал КУНИ ЛЕРЕ!"];
 
     const randomIndex = Math.floor(Math.random() * data2.length);
-    const randomName = names[randomIndex];
+    const randomName = data2[randomIndex];
     typeWriter(randomName);
 }
 

@@ -3,17 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор Оскорблений Для Геев</title>
+    <title>Генератор</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="https://cdn.pfps.gg/pfps/5284-ahegao.gif" alt="Логотип" class="logo">
+        <img src="https://cdn.pfps.gg/pfps/5284-ahegao.gif" alt="Логотип" class="logo" id="logo">
         <h1>Генератор Случайных Имен</h1>
         <div id="result">Нажмите кнопку для генерации минета</div>
         <button onclick="generateName()">Сгенерировать кончу</button>
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        const gifUrls = [
+            'https://cdn.pfps.gg/pfps/5284-ahegao.gif',
+            'https://el.phncdn.com/gif/7414851.gif',
+            'https://gifsex.ru/images/photos/small/daba6ee13babaebdc1ccaa4489cde748.gif',
+            'https://gifsex.ru/images/2p.gif',
+            'https://lh4.googleusercontent.com/proxy/Xwis8H_LGpPH6X22Ncu3oDPYPkjI7mAahdr1TWHeql2DErImKNfy28xwc8j9y5HxhwTWvXSfs67SGsd5Far4M_FxuJCfMiiqy8wUl7HdUaE8Yy2-holjKePErFX1',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4pUEFJeH_JqpY7WRYYVzNE3Kk13E1DQBlBA&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCcK3lVSt1ohPWeKrc_mD3mhPzCjh-ls2Gg&s',
+        ];
+
+        let usedIndexes = [];
+
+        function getRandomGif() {
+            if (usedIndexes.length === gifUrls.length) {
+                usedIndexes = [];
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * gifUrls.length);
+            } while (usedIndexes.includes(randomIndex));
+
+            usedIndexes.push(randomIndex);
+            return gifUrls[randomIndex];
+        }
+
+        function changeGif() {
+            const logo = document.getElementById('logo');
+            logo.src = getRandomGif();
+        }
+
+        setInterval(changeGif, 10000);
+    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
         <h1>Генератор Случайных Оскорблений для геев</h1>
         <div id="result">Нажмите кнопку для генерации минета</div>
         <button onclick="generateName()">Сгенерировать кончу</button>
-        <button onclick="openVideo()">Открыть видео</button>
+        <button onclick="openRandomVideo()">Открыть видео</button>
     </div>
 
     <div class="date-updated" id="last-updated"></div>
@@ -34,19 +34,18 @@
             'https://gifsex.ru/images/2p.gif'
         ];
 
-        let usedIndexes = [];
+        const videoUrls = [
+            "https://cdn2.pvvstream.pro/videos/-180965557/456240846/vid_480p.mp4?verify=1728009797-SeoeuL7%2BhKOql155rpSwPLPkjCVH%2F41R28tPJKAXlrE%3D",
+            "https://cdn.pvvstream.pro/videos/-224512377/456240179/vid_480p.mp4?rs=480000&rb=2796202&secure=m1ykESf_HUosLYbkESY_Xg%3D%3D%2C1728013145",
+            "https://cdn.pvvstream.pro/videos/-216524472/456239596/vid_480p.mp4?rs=480000&rb=2796202&secure=S6BoGj4-fn-IrPfSfRhNew%3D%3D%2C1728013315",
+            "https://vkvd114.mycdn.me/?expires=1728271065095&srcIp=45.84.31.108&pr=40&srcAg=CHROME&ms=185.226.53.158&type=1&subId=7002700384818&sig=LoNTheCrp_g&ct=0&urls=45.136.21.147&clientType=13&appId=512000384397&id=7002698091058"
+        ];
+
+        let usedVideoIndexes = [];
+        let videoWindow = null;
 
         function getRandomGif() {
-            if (usedIndexes.length === gifUrls.length) {
-                usedIndexes = [];
-            }
-
-            let randomIndex;
-            do {
-                randomIndex = Math.floor(Math.random() * gifUrls.length);
-            } while (usedIndexes.includes(randomIndex));
-
-            usedIndexes.push(randomIndex);
+            const randomIndex = Math.floor(Math.random() * gifUrls.length);
             return gifUrls[randomIndex];
         }
 
@@ -55,15 +54,26 @@
             logo.src = getRandomGif();
         }
 
-        function openVideo() {
-            // Замените URL на ссылку на ваше видео
-            const videoUrl = "https://cdn2.pvvstream.pro/videos/-180965557/456240846/vid_480p.mp4?verify=1728009797-SeoeuL7%2BhKOql155rpSwPLPkjCVH%2F41R28tPJKAXlrE%3D";
-            const videoWindow = window.open("", "_blank", "width=800,height=600");
+        function openRandomVideo() {
+            if (videoWindow && !videoWindow.closed) {
+                alert("Окно с видео уже открыто!");
+                return;
+            }
 
-            // Установка заголовка окна
+            if (usedVideoIndexes.length === videoUrls.length) {
+                usedVideoIndexes = [];
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * videoUrls.length);
+            } while (usedVideoIndexes.includes(randomIndex));
+
+            usedVideoIndexes.push(randomIndex);
+            const videoUrl = videoUrls[randomIndex];
+
+            videoWindow = window.open("", "_blank", "width=800,height=600");
             videoWindow.document.title = "Видеоплеер";
-
-            // Заполнение содержимого
             videoWindow.document.write(`
                 <html>
                     <head>
@@ -93,8 +103,8 @@
             `);
         }
 
-         function updateLastUpdated() {
-            const lastUpdatedDate = "Последнее обновление: 4 октября 2024 г. в 12:11:17"; // Укажите дату последнего обновления
+        function updateLastUpdated() {
+            const lastUpdatedDate = "Последнее обновление: 4 октября 2024 г. в 12:21:49"; // Укажите дату последнего обновления
             document.getElementById('last-updated').textContent = lastUpdatedDate;
         }
 

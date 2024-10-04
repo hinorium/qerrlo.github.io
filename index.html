@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Генератор</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .date-updated {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,8 +21,10 @@
         <h1>Генератор Случайных Оскорблений для геев</h1>
         <div id="result">Нажмите кнопку для генерации минета</div>
         <button onclick="generateName()">Сгенерировать кончу</button>
-        <button onclick="openVideo()">Открыть п0рн0 видео</button>
+        <button onclick="openVideo()">Открыть видео</button>
     </div>
+
+    <div class="date-updated" id="last-updated"></div>
 
     <script>
         const gifUrls = [
@@ -48,15 +59,48 @@
             // Замените URL на ссылку на ваше видео
             const videoUrl = "https://cdn2.pvvstream.pro/videos/-180965557/456240846/vid_480p.mp4?verify=1728009797-SeoeuL7%2BhKOql155rpSwPLPkjCVH%2F41R28tPJKAXlrE%3D";
             const videoWindow = window.open("", "_blank", "width=800,height=600");
+
+            // Установка заголовка окна
+            videoWindow.document.title = "Видеоплеер";
+
+            // Заполнение содержимого
             videoWindow.document.write(`
-                <video controls autoplay style="width:100%; height:100%;">
-                    <source src="${videoUrl}" type="video/mp4">
-                    Ваш браузер не поддерживает элемент <code>video</code>.
-                </video>
+                <html>
+                    <head>
+                        <title>Порнуха! Негры ебут марата и кончают ему в рот</title>
+                        <style>
+                            body {
+                                margin: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                background-color: #f0f0f0;
+                            }
+                            video {
+                                max-width: 100%;
+                                max-height: 100%;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <video controls autoplay>
+                            <source src="${videoUrl}" type="video/mp4">
+                            Ваш браузер не поддерживает элемент <code>video</code>.
+                        </video>
+                    </body>
+                </html>
             `);
         }
 
+        function updateLastUpdated() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('last-updated').textContent = `Последнее обновление: ${now.toLocaleDateString('ru-RU', options)}`;
+        }
+
         setInterval(changeGif, 10000);
+        updateLastUpdated(); // Обновляем дату при загрузке страницы
     </script>
 
     <script src="js/script.js"></script>

@@ -12,6 +12,7 @@
         <h1>Генератор Случайных Оскорблений для геев</h1>
         <div id="result">Нажмите кнопку для генерации минета</div>
         <button onclick="generateName()">Сгенерировать кончу</button>
+        <button onclick="openVideo()">Открыть видео</button>
     </div>
 
     <script>
@@ -41,6 +42,18 @@
         function changeGif() {
             const logo = document.getElementById('logo');
             logo.src = getRandomGif();
+        }
+
+        function openVideo() {
+            // Замените URL на ссылку на ваше видео
+            const videoUrl = "https://www.example.com/video.mp4";
+            const videoWindow = window.open("", "_blank", "width=800,height=600");
+            videoWindow.document.write(`
+                <video controls autoplay style="width:100%; height:100%;">
+                    <source src="${videoUrl}" type="video/mp4">
+                    Ваш браузер не поддерживает элемент <code>video</code>.
+                </video>
+            `);
         }
 
         setInterval(changeGif, 10000);

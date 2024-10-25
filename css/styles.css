@@ -171,5 +171,5 @@ button:active {
     height: 100%;
     background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.8) 100%);
     pointer-events: none;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }

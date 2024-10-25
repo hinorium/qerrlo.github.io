@@ -16,15 +16,14 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Размещаем элементы по краям */
     padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: absolute;
+    position: fixed; /* Фиксируем хедер вверху страницы */
     top: 0;
     z-index: 2;
-    position: fixed;
 }
 
 .site-logo {
@@ -39,20 +38,26 @@ body {
     margin: 0;
 }
 
+.header-center {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Занимает оставшееся пространство между кнопкой и логотипом */
+    justify-content: center; /* Центрируем логотип и заголовок */
+}
+
 .header-button {
-    margin-left: auto;
     padding: 10px 20px;
     font-size: 1em;
     color: #ecf0f1;
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 2px solid gray;
-    border-radius: 8px;
+    background-color: rgba(20, 20, 20, 0.9); /* Темнее хедера */
+    border: 2px solid gray; /* Серый обвод */
+    border-radius: 8px; /* Скругленные углы */
     text-decoration: none;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
 .header-button:hover {
-    background-color: rgba(15, 15, 15, 0.9);
+    background-color: rgba(15, 15, 15, 0.9); /* Темнее при наведении */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }

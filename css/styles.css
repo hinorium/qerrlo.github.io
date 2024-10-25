@@ -16,7 +16,7 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Центрируем весь контент хедера */
     padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
@@ -29,10 +29,8 @@ body {
 .header-center {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: center; /* Центрируем логотип и заголовок */
+    flex-grow: 1; /* Позволяет занять все доступное пространство */
 }
 
 .site-logo {
@@ -48,7 +46,6 @@ body {
 }
 
 .header-button {
-    margin-left: auto;
     padding: 10px 20px;
     font-size: 1em;
     color: #ecf0f1;
@@ -57,7 +54,8 @@ body {
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
-    margin-right: 20px;
+    margin-left: auto; /* Перемещаем кнопку в правую часть */
+    margin-right: 20px; /* Отступ от правого края */
 }
 
 .header-button:hover {

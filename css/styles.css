@@ -16,8 +16,8 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-between; /* Добавлено для равномерного распределения */
+    padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -38,6 +38,28 @@ body {
     margin: 0;
 }
 
+.header-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ecf0f1;
+    background-color: rgba(20, 20, 20, 0.9); /* Темнее хедера */
+    border: 2px solid gray; /* Серый обвод */
+    border-radius: 8px; /* Скругленные углы */
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.header-button:hover {
+    background-color: rgba(15, 15, 15, 0.9); /* Темнее при наведении */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.header-button:active {
+    background-color: rgba(10, 10, 10, 0.9); /* Еще темнее при нажатии */
+    transform: scale(0.95);
+}
+
 .container {
     text-align: center;
     background: rgba(30, 30, 30, 0.9);
@@ -48,7 +70,7 @@ body {
     width: 100%;
     transition: transform 0.2s;
     z-index: 1;
-    margin-top: 80px; /* Добавляем отступ сверху, чтобы контейнер не перекрывал хедер */
+    margin-top: 80px; /* Отступ сверху для контейнера */
 }
 
 .container:hover {
@@ -126,5 +148,5 @@ button:active {
     height: 100%;
     background: linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(15, 15, 15, 0.8) 100%);
     pointer-events: none;
-    backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(10px);
 }

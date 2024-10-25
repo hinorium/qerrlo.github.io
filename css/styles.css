@@ -16,7 +16,7 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Добавлено для равномерного распределения */
+    justify-content: center;
     padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
@@ -24,6 +24,7 @@ body {
     position: absolute;
     top: 0;
     z-index: 2;
+    position: relative;
 }
 
 .site-logo {
@@ -39,24 +40,28 @@ body {
 }
 
 .header-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     padding: 10px 20px;
     font-size: 1em;
     color: #ecf0f1;
-    background-color: rgba(20, 20, 20, 0.9); /* Темнее хедера */
-    border: 2px solid gray; /* Серый обвод */
-    border-radius: 8px; /* Скругленные углы */
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 2px solid gray;
+    border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
 .header-button:hover {
-    background-color: rgba(15, 15, 15, 0.9); /* Темнее при наведении */
+    background-color: rgba(15, 15, 15, 0.9);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
 .header-button:active {
-    background-color: rgba(10, 10, 10, 0.9); /* Еще темнее при нажатии */
+    background-color: rgba(10, 10, 10, 0.9);
     transform: scale(0.95);
 }
 

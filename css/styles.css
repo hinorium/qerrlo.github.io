@@ -16,7 +16,7 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Используем space-between для равномерного распределения */
+    justify-content: space-between;
     padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
@@ -31,13 +31,13 @@ body {
     align-items: center;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Центрирование логотипа и заголовка */
+    transform: translateX(-50%);
 }
 
 .site-logo {
     width: 50px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .site-title {

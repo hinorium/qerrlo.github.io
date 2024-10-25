@@ -13,24 +13,10 @@ body {
     position: relative;
 }
 
-<header class="site-header">
-    <div class="header-center">
-        <img src="assets/logo.png" alt="Логотип сайта" class="site-logo">
-        <h1 class="site-title">VA Incorparated.</h1>
-    </div>
-    <a href="https://red.mat6tube.com/recent" class="header-button">Перейти на порно сайт</a>
-</header>
-
-
-### Изменения в CSS
-
-Настройте стили так, чтобы логотип и заголовок располагались в центре:
-
-css
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Используем space-between для равномерного распределения */
     padding: 10px 20px;
     background: rgba(30, 30, 30, 0.9);
     width: 100%;
@@ -45,7 +31,7 @@ css
     align-items: center;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Центрирование логотипа и заголовка */
 }
 
 .site-logo {

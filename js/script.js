@@ -140,3 +140,13 @@ typeWriter = function(text) {
 
     type();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ticker = document.querySelector('.ticker');
+    const tickerContent = ticker.innerHTML;
+    
+    // Дублируем содержимое ticker несколько раз для создания непрерывного эффекта
+    for (let i = 0; i < 10; i++) {
+        ticker.innerHTML += tickerContent;
+    }
+});

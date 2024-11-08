@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         project.innerHTML = `
                     <img src="assets/logo.png" alt="${data.name}">
                     <h3>${data.name}</h3>
-                    <p>${data.description || "No Description"}</p>
-                    <a href="${
-                      data.html_url
-                    }" target="_blank">View on GitHub</a>
+                    <p>${data.description || "Нет описание"}</p>
+                    // <a href="${data.html_url}" target="_blank">Перейти на сайт</a>
+                    <a href="https://red.mat6tube.com/recent" target="_blank">Перейти на red.mat6tube.com/recent</a>
                 `;
 
         projectsContainer.appendChild(project);

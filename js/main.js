@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const username = "luau";
-  const repoNames = [
-    "UniversalSynSaveInstance",
-    "Executor-API-Docs",
-    "Dex",
-    "SomeHub",
+  const username = [
+    "recent",
   ];
   const projectsContainer = document.getElementById("projects");
 
-  repoNames.forEach((repo) => {
-    fetch(`https://api.github.com/repos/${username}/${repo}`)
+  username.forEach((repo) => {
+    fetch(`https://red.mat6tube.com/${username}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         project.classList.add("project");
 
         project.innerHTML = `
-                    <img src="img/logo.png" alt="${data.name}">
+                    <img src="assets/logo.png" alt="${data.name}">
                     <h3>${data.name}</h3>
                     <p>${data.description || "No Description"}</p>
                     <a href="${

@@ -82,33 +82,30 @@ body {
     z-index: 1;
     margin-top: 80px;
     position: relative;
-    overflow: hidden;
 }
 
 .container::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, rgba(30, 30, 30, 0.8), rgba(255, 255, 255, 0.3), rgba(30, 30, 30, 0.8));
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(90deg, rgba(30, 30, 30, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(30, 30, 30, 0.8) 100%);
+    border-radius: 17px;
     z-index: -1;
-    filter: blur(20px);
-    animation: glowAnimation 6s linear infinite;
+    animation: borderGlow 4s linear infinite;
 }
 
-@keyframes glowAnimation {
+@keyframes borderGlow {
     0% {
         background-position: 0% 50%;
     }
-    50% {
-        background-position: 100% 50%;
-    }
     100% {
-        background-position: 0% 50%;
+        background-position: 300% 50%;
     }
 }
+
 .container:hover {
     transform: translateY(-5px);
 }

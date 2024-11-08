@@ -16,58 +16,62 @@
     </style>
 </head>
 <body>
-    <header class="site-header">
+<!--      <header class="site-header">
         <div class="header-center">
             <img src="assets/logo.png" alt="Логотип сайта" class="site-logo">
             <h1 class="site-title">VA Incorparated.</h1>
         </div>
-        <script>
-    function openAlertAndRedirect() {
-        const newWindow = window.open("", "_blank", "width=200,height=100");
+        <a href="https://red.mat6tube.com/recent" class="header-button">Перейти на порно сайт</a>
+         </header> -->
+         <header class="site-header">
+    <div class="header-center">
+        <img src="assets/logo.png" alt="Логотип сайта" class="site-logo">
+        <h1 class="site-title">VA Incorparated.</h1>
+    </div>
+    <a href="#" onclick="openAlertAndRedirect()" class="header-button">Перейти на порно сайт</a>
+              </header>
 
-        if (newWindow) {
-            newWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Предупреждение</title>
-                        <style>
-                            body {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                height: 100vh;
-                                margin: 0;
-                                font-family: Arial, sans-serif;
-                                background-color: #f0f0f0;
-                            }
-                            button {
-                                padding: 10px 20px;
-                                font-size: 16px;
-                                cursor: pointer;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <button onclick="alertAndRedirect()">Перейти на сайт</button>
-
-                        <script>
-                            function alertAndRedirect() {
-                                alert("Вы будете перенаправлены на сайт для взрослых.");
-                                window.location.href = "https://red.mat6tube.com/recent";
-                            }
-                        </script>
-                    </body>
-                </html>
-            `);
-        } else {
-            // Если новое окно не открылось, выводим предупреждение
-            alert("Пожалуйста, разрешите всплывающие окна для этого сайта.");
-        }
+<script>
+function openAlertAndRedirect() {
+    const newWindow = window.open("", "_blank", "width=300,height=150");
+    if (newWindow) {
+        newWindow.document.write(`
+            <html>
+                <head>
+                    <title>Предупреждение</title>
+                    <style>
+                        body {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                        }
+                        button {
+                            padding: 10px 20px;
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <button onclick="showAlertAndRedirect()">Перейти на сайт</button>
+                    <script>
+                        function showAlertAndRedirect() {
+                            alert("Вы будете перенаправлены на сайт для взрослых.");
+                            window.location.href = "https://red.mat6tube.com/recent";
+                        }
+                    </script>
+                </body>
+            </html>
+        `);
+    } else {
+        alert("Пожалуйста, разрешите всплывающие окна для этого сайта.");
     }
+}
 </script>
-
-<a href="#" onclick="openAlertAndRedirect()" class="header-button">Перейти на порно сайт</a>
-    </header>
 
     <div class="container">
         <img src="https://cdn.pfps.gg/pfps/5284-ahegao.gif" alt="Логотип" class="logo" id="logo">

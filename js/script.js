@@ -1,14 +1,5 @@
 let typingInProgress = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const ticker = document.querySelector('.ticker');
-    const tickerContent = ticker.innerHTML;
-    
-    for (let i = 0; i < 10; i++) {
-        ticker.innerHTML += tickerContent;
-    }
-});
-
 generateName = function() {
     if (typingInProgress) return;
 

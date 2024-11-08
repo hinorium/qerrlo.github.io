@@ -6,11 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   project.classList.add("project");
 
   project.innerHTML = `
-    <img src="img/logo.png" alt="ya eby?">
-                    <h3>Mat6tube</h3>
-                    <p>"No Description"}</p>
-                    <a href="red.mat6tube.com/recent
-                    }" target="_blank">View on GitHub</a>
-                `;
+    <img src="img/logo.png" alt="red-mat6tube-com">
+                    <h3>Mat6Tube</h3>
+                    <p>Данный раздел сайта может содержать информацию, предназначенную для лиц, достигших 18 лет. Чтобы продолжить, подтвердите достижение данного возраста.</p>
+                    <a href="https://red.mat6tube.com/recent" target="_blank">View on GitHub</a>`;
   projectsContainer.appendChild(project);
 });

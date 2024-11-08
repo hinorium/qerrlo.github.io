@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const project = document.createElement("div");
   project.classList.add("project");
+  const project2 = document.createElement("div");
+  project2.classList.add("project");
 
   project.innerHTML = `
     <img src="assets/logo.png" alt="red">
@@ -12,11 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="https://red.mat6tube.com/recent" target="_blank">Перейти на сайт</a>`;
   projectsContainer.appendChild(project);
 
-  project.classList.add("project");
-    project.innerHTML = `
+    project2.innerHTML = `
     <img src="assets/logo.png" alt="red">
                     <h3>Noodlemagazine</h3>
                     <p>Данный сайт предназначен для лиц, достигших 18 лет.</p>
                     <a href="https://adult.noodlemagazine.com/new-video" target="_blank">Перейти на сайт</a>`;
-  projectsContainer.appendChild(project);
+  projectsContainer.appendChild(project2);
 });

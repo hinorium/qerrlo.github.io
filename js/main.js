@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="https://red.mat6tube.com/recent" target="_blank">Перейти на сайт</a>`;
   projectsContainer.appendChild(project);
 
+  project.classList.add("project");
     project.innerHTML = `
     <img src="assets/logo.png" alt="red">
                     <h3>Noodlemagazine</h3>

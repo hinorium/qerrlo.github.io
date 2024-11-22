@@ -14,17 +14,8 @@
             color: gray;
         }
 
-        /* Добавляем новые стили */
-        .logo {
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .modal-overlay {
+        /* Стили для модального окна */
+        .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -32,117 +23,75 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
             z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .modal-content {
-            position: fixed;
+        .modal-img {
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            max-width: 1000px;
-            max-height: 1000px;
-            z-index: 1001;
-            display: none;
-            opacity: 0;
-            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+            max-width: 600px; /* Регулируйте размер здесь */
+            width: auto;
+            height: auto;
+            border-radius: 5px;
         }
 
-        .modal-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-        }
-
-        .modal-content.active {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            color: white;
-            font-size: 30px;
+        .logo {
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Существующий код header -->
+    <header class="site-header">
+        <div class="header-center">
+            <img src="https://assets.pixelcut.app/temp/upscale/04336458-9e5b-45bf-9f8a-40a86bf654f1.jpg?Expires=1732246305&KeyName=px-assets-key-1&Signature=sM61NY4yIqRgGg-1OFN1cAYFsjQ=" alt="Логотип сайта" class="site-logo">
+            <h1 class="site-title">VA Incorparated.</h1>
+        </div>
+        <a href='index.html' class="header-button"> ← Вернуться</a>
+    </header>
 
     <div class="container">
-        <img src="https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp" alt="Логотип" class="logo" id="logo" onclick="openModal(this)">
-        <!-- Остальной существующий код -->
+        <img src="https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp" alt="Логотип" class="logo" id="logo" onclick="openImage(this.src)">
+        <h1>VA Studio - Annfigma</h1>
+        <div id="result">Нажмите кнопку для генерации минета</div>
+        <button onclick="generateName()">Сгенерировать кончу</button>
+        <button onclick="openRandomVideo()">Открыть видео</button>
     </div>
 
-    <!-- Добавляем модальное окно -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content" id="modalContent">
-            <button class="close-modal" onclick="closeModal()">×</button>
-            <img src="" alt="Увеличенное изображение" id="modalImage">
-        </div>
+    <!-- Модальное окно -->
+    <div id="imageModal" class="modal" onclick="closeImage()">
+        <img id="modalImage" class="modal-img">
     </div>
 
-    <!-- Существующие скрипты -->
+    <div class="blur-fade"></div>
+    <div class="date-updated" id="last-updated"></div>
+
     <script>
-        // Существующий код updateLastUpdated()
-
-        // Добавляем новые функции для модального окна
-        function openModal(imgElement) {
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalContent = document.getElementById('modalContent');
-            const modalImage = document.getElementById('modalImage');
-
-            modalImage.src = imgElement.src;
-            modalOverlay.style.display = 'block';
-            modalContent.style.display = 'block';
-
-            // Добавляем небольшую задержку перед добавлением класса active
-            setTimeout(() => {
-                modalOverlay.classList.add('active');
-                modalContent.classList.add('active');
-            }, 10);
+        function updateLastUpdated() {
+            const lastUpdatedDate = "Последнее обновление: 22 ноября 2024 г. в 12:17:24";
+            document.getElementById('last-updated').textContent = lastUpdatedDate;
+        }
+        
+        function openImage(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.src = src;
         }
 
-        function closeModal() {
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalContent = document.getElementById('modalContent');
-
-            modalOverlay.classList.remove('active');
-            modalContent.classList.remove('active');
-
-            // Ждем окончания анимации перед скрытием элементов
-            setTimeout(() => {
-                modalOverlay.style.display = 'none';
-                modalContent.style.display = 'none';
-            }, 300);
+        function closeImage() {
+            document.getElementById('imageModal').style.display = "none";
         }
 
-        // Закрытие по клику вне изображения
-        document.getElementById('modalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Закрытие по клавише Escape
+        // Закрытие по Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                closeModal();
+                closeImage();
             }
         });
+
+        updateLastUpdated();
     </script>
 
     <script src="annfigma_leaks/js/script.js"></script>

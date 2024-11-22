@@ -8,7 +8,7 @@ body {
     margin: 0;
     color: #ecf0f1;
     user-select: none;
-    background: url('/assets/background.png') no-repeat center center fixed;
+    background: url('https://cdn-pr.pvvstream.pro/videos/480/-225223448_456239388.mp4?url=dmt2ZDUyMC5va2Nkbi5ydS8_ZXhwaXJlcz0xNzMyNTAwNzY4NTI1JnNyY0lwPTQ1Ljg0LjMxLjEyMyZwcj00MCZzcmNBZz1VTktOT1dOJm1zPTE4NS4yMjYuNTUuMTU4JnR5cGU9MiZzaWc9WWhyeWp6eVhPQjgmY3Q9MCZ1cmxzPTE4NS4yMjYuNTMuMTYyJmNsaWVudFR5cGU9MTQmYXBwSWQ9NTEyMDAwMzg0Mzk3JmlkPTYzNzU1MTgwNDY3NDg&expires=1732243368&hash=Y1ERsKQV9GdOnvBJmbvSrg&secure=1732241568-EmYZm3rB%2BccfFWWWPGKaR2suuTalAZyLBKeyoBzdVrc%3D') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }

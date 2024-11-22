@@ -3,65 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA Studio. - Annfigma Leaks!</title>
+    <title>Генератор</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/logo.png" sizes="16x16">
-    <script src="js/main.js" defer></script>
+    <style>
+        .date-updated {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-      <div class="logo">
-        <img class="logo-img" src="assets/logo.png" alt="VA Logo" />
-      </div>
-      <nav class="menu">
-        <ul>
-          <li><a href="#abt">О нас</a></li>
-          <li><a href="#proj">Переходы</a></li>
-        </ul>
-      </nav>
+     <header class="site-header">
+        <div class="header-center">
+            <img src="assets/logo.png" alt="Логотип сайта" class="site-logo">
+            <h1 class="site-title">VA Incorparated.</h1>
+        </div>
+        <a href="https://red.mat6tube.com/recent" class="header-button">Перейти на порно сайт</a>
     </header>
-    <hr>
-    
-    <main class="container">
-      <section id="abt" class="about">
-        <h1>
-          <img
-            src="assets/about.svg"
-            width="20"
-            height="20"
-            class="section-icon"
-            alt="section-icon"
-          />
-          О нас
-        </h1>
-        <p>
-          Добро пожаловать
-          на переходник созданный VA Incorparated,
-          ваш персональный ресурс для разнообразного контента для взрослых.
-          Мы стремимся предоставить нашим пользователям безопасную и комфортную среду для доступа к контенту,
-          который соответствует их интересам и предпочтениям.
-          Если что это всё наебалово про безопасность мы ничего не гарантируем и Марат сосал член Матвею! 
-        </p>
-        <p>
-          Мы верим в важность свободного и открытого доступа к мультимедийному контенту для взрослых.
-          Наша миссия — предложить вам коллекцию высококачественных видео и изображений,
-          которые удовлетворяют разнообразные вкусы и предпочтения.
-          Главное чтоб Ростелеком сосал член!
-        </p>
-      </section>
-        
-      <img class="divider" src="assets/divider.png" alt="Divider" />
-        
-    </main>
 
-    <div class="light x1"></div>
-    <div class="light x2"></div>
-    <div class="light x3"></div>
-    <div class="light x4"></div>
-    <div class="light x5"></div>
-    <div class="light x6"></div>
-    <div class="light x7"></div>
-    <div class="light x8"></div>
-    <div class="light x9"></div>
+    <div class="container">
+        <img src="https://cdn.pfps.gg/pfps/5284-ahegao.gif" alt="Логотип" class="logo" id="logo">
+        <h1>Генератор Случайных Оскорблений для геев</h1>
+        <div id="result">Нажмите кнопку для генерации минета</div>
+        <button onclick="generateName()">Сгенерировать кончу</button>
+        <button onclick="openRandomVideo()">Открыть видео</button>
+    </div>
+
+    <div class="blur-fade"></div>
+    <div class="date-updated" id="last-updated"></div>
+
+    <script>
+        const gifUrls = [
+            'https://cdn.pfps.gg/pfps/5284-ahegao.gif',
+            'https://el.phncdn.com/gif/7414851.gif',
+            'https://gifsex.ru/images/photos/small/daba6ee13babaebdc1ccaa4489cde748.gif',
+            'https://gifsex.ru/images/2p.gif'
+        ];
+
+        const videoUrls = [
+            "https://vkvd504.okcdn.ru/?expires=1730077786919&srcIp=45.84.28.19&pr=40&srcAg=CHROME&ms=185.226.55.142&type=2&sig=jAYrBVbawVw&ct=0&urls=45.136.22.208&clientType=13&appId=512000384397&id=6807141485277",
+            "https://p2-134.pvvstream.pro/videos/480/-203732505_456239728.mp4?url=dmt2ZDM2OC5va2Nkbi5ydS8_c3JjSXA9NDUuODQuMjguMTQ5JnByPTQwJmV4cGlyZXM9MTczMDI3OTUyNDUwOSZzcmNBZz1VTktOT1dOJmZyb21DYWNoZT0xJm1zPTE4NS4yMjYuNTMuMjAzJnR5cGU9MiZzaWc9MnNGQmxZczA0ZWcmY3Q9MCZ1cmxzPTE4NS4yMjYuNTUuMTQ1JmNsaWVudFR5cGU9MTMmYXBwSWQ9NTEyMDAwMzg0Mzk3JmlkPTMyNjQwNTM0NDczMTk&expires=1729822124&hash=tUWvFtj_ejn7irpGbz_tog&secure=1729820324-xRTfq5eoEMbd1%2B73yAoEC9R5Y%2FtOVtuteUYKKvAtdUc%3D",
+            "https://vkvd272.okcdn.ru/?srcIp=45.84.31.122&pr=40&expires=1730261454536&srcAg=CHROME&fromCache=1&ms=185.226.52.150&type=2&subId=6223293254398&sig=5GnvKL-vLO8&ct=0&urls=45.136.21.147&clientType=13&appId=512000384397&id=6223260420862",
+            "https://vkvd172.okcdn.ru/?expires=1730067697941&srcIp=45.84.28.32&pr=40&srcAg=CHROME&ms=45.136.21.147&type=2&subId=6606655916635&sig=Xmh65QPzXLo&ct=0&urls=185.226.52.140&clientType=13&appId=512000384397&id=6606527007323",
+            // "https://cdn.pvvstream.pro/videos/-115798651/456242728/vid_480p.mp4?rs=480000&rb=2796202&secure=bAKijEAtlRcJR3t49YB9EQ%3D%3D%2C1729224452", 
+            //"",
+        ];
+
+        let usedVideoIndexes = [];
+        let videoWindow = null;
+
+        function getRandomGif() {
+            const randomIndex = Math.floor(Math.random() * gifUrls.length);
+            return gifUrls[randomIndex];
+        }
+
+        function changeGif() {
+            const logo = document.getElementById('logo');
+            logo.src = getRandomGif();
+        }
+
+        function openRandomVideo() {
+            if (videoWindow && !videoWindow.closed) {
+                alert("Окно с видео уже открыто!");
+                return;
+            }
+
+            if (usedVideoIndexes.length === videoUrls.length) {
+                usedVideoIndexes = [];
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * videoUrls.length);
+            } while (usedVideoIndexes.includes(randomIndex));
+
+            usedVideoIndexes.push(randomIndex);
+            const videoUrl = videoUrls[randomIndex];
+
+            videoWindow = window.open("", "_blank", "width=800,height=600");
+            videoWindow.document.title = "Видеоплеер";
+            videoWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Порнуха! Негры ебут марата и кончают ему в рот</title>
+                        <style>
+                            body {
+                                margin: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                background-color: #121212;
+                            }
+                            video {
+                                max-width: 100%;
+                                max-height: 100%;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <video controls autoplay>
+                            <source src="${videoUrl}" type="video/mp4">
+                            Ваш браузер не поддерживает элемент <code>video</code>.
+                        </video>
+                    </body>
+                </html>
+            `);
+        }
+
+        function updateLastUpdated() {
+            const lastUpdatedDate = "Последнее обновление: 25 октября 2024 г. в 12:25:23"; // Укажите дату последнего обновления
+            document.getElementById('last-updated').textContent = lastUpdatedDate;
+        }
+
+        setInterval(changeGif, 10000);
+        updateLastUpdated(); // Обновляем дату при загрузке страницы
+    </script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -14,21 +14,6 @@
             color: gray;
         }
 
-        .image-button {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-button img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
         .popup {
             display: none;
             position: fixed;
@@ -56,7 +41,7 @@
     </style>
 </head>
 <body>
-     <header class="site-header">
+    <header class="site-header">
         <div class="header-center">
             <img src="https://assets.pixelcut.app/temp/upscale/04336458-9e5b-45bf-9f8a-40a86bf654f1.jpg?Expires=1732246305&KeyName=px-assets-key-1&Signature=sM61NY4yIqRgGg-1OFN1cAYFsjQ=" alt="Логотип сайта" class="site-logo">
             <h1 class="site-title">VA Incorparated.</h1>
@@ -65,9 +50,7 @@
     </header>
 
     <div class="container">
-        <button class="image-button" onclick="showPopup()">
-            <img src="https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp" alt="Логотип" class="logo" id="logo">
-        </button>
+        <img src="https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp" alt="Логотип" class="logo" id="logo" onclick="showPopup()">
         <h1>VA Studio - Annfigma</h1>
         <div id="result">Нажмите кнопку для генерации минета</div>
         <button onclick="generateName()">Сгенерировать кончу</button>

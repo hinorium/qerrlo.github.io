@@ -80,6 +80,33 @@
         .popup-trigger {
             cursor: pointer;
         }
+
+            .video-container {
+        max-width: 1200px; /* Увеличенная ширина */
+        width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        position: relative; /* Добавлено */
+        z-index: 1001; /* Больше чем у .popup (1000) */
+    }
+
+    #player {
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #000;
+        min-height: 600px; /* Минимальная высота */
+    }
+
+    .video-container h2 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
     </style>
 </head>
 <body>
@@ -118,6 +145,24 @@
 <script src="annfigma_leaks/modules/playerjs.js"></script>
     
     <script>        
+        document.addEventListener('DOMContentLoaded', function() {
+        var player = new Playerjs({
+            id: "player",
+            file: videoUrls.join(','),
+            playlist: videoUrls.map(url => ({
+                file: url,
+            })),
+            autoplay: false,
+            volume: 100,
+            height: "600px", /* Увеличенная высота */
+            width: "100%",
+            theme: "black",
+            title: "VA Player",
+            poster: "https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp"
+        });
+    });
+        
+        
 document.addEventListener('DOMContentLoaded', function() {
         const images = document.querySelectorAll('.popup-trigger');
         images.forEach(img => {

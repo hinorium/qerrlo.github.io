@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="https://adult.noodlemagazine.com/new-video" target="_blank">Перейти на сайт</a>`;
   projectsContainer.appendChild(project2);
 
-  project3.innerHTML = `
-    <img src="assets/logo.png" alt="red">
-                    <h3>Sex-Studentki</h3>
-                    <p>Данный сайт предназначен для лиц, достигших 18 лет.</p>
-                    <a href="https://sex-studentki.love/" target="_blank">Перейти на сайт</a>`;
-  projectsContainer.appendChild(project3);
+  // project3.innerHTML = `
+  //   <img src="assets/logo.png" alt="red">
+  //                   <h3>Sex-Studentki</h3>
+  //                   <p>Данный сайт предназначен для лиц, достигших 18 лет.</p>
+  //                   <a href="https://sex-studentki.love/" target="_blank">Перейти на сайт</a>`;
+  // projectsContainer.appendChild(project3);
   
 });

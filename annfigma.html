@@ -46,10 +46,10 @@
     transition: all 0.4s ease;
 }
 
-.popup-content.active {
-    top: 50%;
-    opacity: 1;
-}
+        .popup-content.active {
+            top: 50%;
+            opacity: 1;
+        }
 
         .popup-content img {
             width: 100%;
@@ -76,12 +76,16 @@
         .popup-title.active {
             opacity: 1;
         }
+
+        .popup-trigger {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header class="site-header">
         <div class="header-center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbMUH8a5I5b51F4F2RCVBWr0Q3P4recOjsA&s" alt="Логотип сайта" class="site-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbMUH8a5I5b51F4F2RCVBWr0Q3P4recOjsA&s" alt="Логотип сайта" class="site-logo popup-trigger">
             <h1 class="site-title">VA Incorparated.</h1>
         </div>
         <a href='index.html' class="header-button"> ← Вернуться</a>
@@ -96,46 +100,57 @@
     </div>
 
     <!-- Попап для изображения -->
-    <div class="popup" id="imagePopup" onclick="hidePopup()">
-        <div class="popup-content">
-            <div class="popup-title">VA Галерея</div>
-            <img src="https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp" alt="Увеличенное изображение">
-        </div>
+<div class="popup" id="imagePopup" onclick="hidePopup()">
+    <div class="popup-content">
+        <div class="popup-title">VA Галерея</div>
+        <img id="popup-image" src="" alt="Увеличенное изображение">
     </div>
+</div>
 
     <div class="blur-fade"></div>
     <div class="date-updated" id="last-updated"></div>
 
     <script>
-        function showPopup() {
-            const popup = document.getElementById('imagePopup');
-            const content = popup.querySelector('.popup-content');
-            const title = popup.querySelector('.popup-title');
-            
-            popup.style.display = 'block';
-            // Триггерим перерисовку
-            void popup.offsetWidth;
-            
-            // Добавляем классы для анимации
-            popup.classList.add('active');
-            content.classList.add('active');
-            title.classList.add('active');
-        }
+document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.popup-trigger');
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                showPopup(this.src, this.alt);
+            });
+        });
+    });
 
-        function hidePopup() {
-            const popup = document.getElementById('imagePopup');
-            const content = popup.querySelector('.popup-content');
-            const title = popup.querySelector('.popup-title');
-            
-            popup.classList.remove('active');
-            content.classList.remove('active');
-            title.classList.remove('active');
-            
-            // Ждем окончания анимации перед скрытием
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 400);
-        }
+    function showPopup(imageSrc, imageAlt) {
+        const popup = document.getElementById('imagePopup');
+        const content = popup.querySelector('.popup-content');
+        const title = popup.querySelector('.popup-title');
+        const popupImage = document.getElementById('popup-image');
+        
+        // Устанавливаем источник изображения
+        popupImage.src = imageSrc;
+        popupImage.alt = imageAlt;
+        
+        popup.style.display = 'block';
+        void popup.offsetWidth;
+        
+        popup.classList.add('active');
+        content.classList.add('active');
+        title.classList.add('active');
+    }
+
+    function hidePopup() {
+        const popup = document.getElementById('imagePopup');
+        const content = popup.querySelector('.popup-content');
+        const title = popup.querySelector('.popup-title');
+        
+        popup.classList.remove('active');
+        content.classList.remove('active');
+        title.classList.remove('active');
+        
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 400);
+    }
 
         // Закрытие по клавише Escape
         document.addEventListener('keydown', function(e) {

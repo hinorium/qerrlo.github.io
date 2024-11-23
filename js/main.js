@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   project.classList.add("project");
   const project2 = document.createElement("div");
   project2.classList.add("project");
-  const project3 = document.createElement("div");
-  project3.classList.add("project");
+  // const project3 = document.createElement("div");
+  // project3.classList.add("project");
 
   project.innerHTML = `
     <img src="assets/logo.png" alt="red">

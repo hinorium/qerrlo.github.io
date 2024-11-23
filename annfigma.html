@@ -91,7 +91,7 @@
         background: rgba(0, 0, 0, 0.3);
         border-radius: 15px;
         position: relative;
-        z-index: 1001;
+        z-index: 1;
     }
 
     #player {
@@ -126,12 +126,7 @@
         <button onclick="generateName()">Сгенерировать</button>
         <button onclick="openRandomVideo()">Открыть видео</button>
     </div>
-
-    <div class="video-container">
-    <h2>Видеоплеер</h2>
-    <div id="player"></div>
-</div>
-
+    
     <!-- Попап для изображения -->
 <div class="popup" id="imagePopup" onclick="hidePopup()">
     <div class="popup-content">
@@ -140,6 +135,11 @@
     </div>
 </div>
 
+    <div class="video-container">
+    <h2>Видеоплеер</h2>
+    <div id="player"></div>
+</div>
+    
     <div class="blur-fade"></div>
     <div class="date-updated" id="last-updated"></div>
 
@@ -158,7 +158,7 @@
             height: "400px", /* Уменьшенная высота */
             width: "100%",
             theme: "black",
-            title: "VA Player",
+            title: "( ✦ ) @annfigma - leaked video!",
             poster: "https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp"
         });
     });

@@ -124,7 +124,7 @@
         <h1>VA Leaks - Annfigma</h1>
         <div id="result">Нажмите кнопку для генерации хуйни</div>
         <button onclick="generateName()">Сгенерировать</button>
-        <button onclick="openRandomVideo()">Открыть видео</button>
+        <button onclick="openRandomVideo()">Открыть видеоплеер</button>
     </div>
     
     <!-- Попап для изображения -->
@@ -146,20 +146,23 @@
 <script src="annfigma_leaks/modules/playerjs.js"></script>
     
     <script>        
+    let player; // Глобальная переменная для доступа к плееру
+
     document.addEventListener('DOMContentLoaded', function() {
-        var player = new Playerjs({
+        player = new Playerjs({
             id: "player",
-            file: videoUrls.join(','),
-            playlist: videoUrls.map(url => ({
+            file: videoUrls[0], // Первое видео по умолчанию
+            playlist: videoUrls.map((url, index) => ({
+                title: `Видео ${index + 1}`,
                 file: url,
+                poster: "https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp"
             })),
             autoplay: false,
             volume: 100,
-            height: "400px", /* Уменьшенная высота */
+            height: "400px",
             width: "100%",
             theme: "black",
-            title: "( ✦ ) @annfigma - leaked video!",
-            poster: "https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp"
+            title: "( ✦ ) @annfigma - leaked video!"
         });
     });
         
@@ -227,63 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
         let usedVideoIndexes = [];
         let videoWindow = null;
 
-        function getRandomGif() {
-            const randomIndex = Math.floor(Math.random() * gifUrls.length);
-            return gifUrls[randomIndex];
-        }
-
-        function changeGif() {
-            const logo = document.getElementById('logo');
-            logo.src = getRandomGif();
-        }
-
-        function openRandomVideo() {
-            if (videoWindow && !videoWindow.closed) {
-                alert("Окно с видео уже открыто!");
-                return;
+       function openRandomVideo() {
+            const videoContainer = document.querySelector('.video-container');
+            videoContainer.scrollIntoView({ behavior: 'smooth' });
+    
+            let randomIndex = Math.floor(Math.random() * videoUrls.length);
+            if (player && typeof player.api === 'function') {
+                player.api("play", randomIndex); // Воспроизвести случайное видео из плейлиста
             }
-
-            if (usedVideoIndexes.length === videoUrls.length) {
-                usedVideoIndexes = [];
-            }
-
-            let randomIndex;
-            do {
-                randomIndex = Math.floor(Math.random() * videoUrls.length);
-            } while (usedVideoIndexes.includes(randomIndex));
-
-            usedVideoIndexes.push(randomIndex);
-            const videoUrl = videoUrls[randomIndex];
-
-            videoWindow = window.open("", "_blank", "width=800,height=600");
-            videoWindow.document.title = "Видеоплеер";
-            videoWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Порнуха! Негры ебут марата и кончают ему в рот</title>
-                        <style>
-                            body {
-                                margin: 0;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                height: 100vh;
-                                background-color: #121212;
-                            }
-                            video {
-                                max-width: 100%;
-                                max-height: 100%;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <video controls autoplay>
-                            <source src="${videoUrl}" type="video/mp4">
-                            Ваш браузер не поддерживает элемент <code>video</code>.
-                        </video>
-                    </body>
-                </html>
-            `);
         }
 
         function updateLastUpdated() {

@@ -99,6 +99,37 @@
         <button onclick="openRandomVideo()">Открыть видео</button>
     </div>
 
+    <div class="video-container">
+    <h2>Видеоплеер</h2>
+    <div id="player"></div>
+</div>
+
+<style>
+    .video-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+
+    #player {
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .video-container h2 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+</style>
+
     <!-- Попап для изображения -->
 <div class="popup" id="imagePopup" onclick="hidePopup()">
     <div class="popup-content">
@@ -110,7 +141,26 @@
     <div class="blur-fade"></div>
     <div class="date-updated" id="last-updated"></div>
 
+<script src="annfigma_leaks/modules/playerjs.js"></script>
+    
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var player = new Playerjs({
+            id: "player",
+            file: videoUrls.join(','), // Объединяем все URL видео через запятую
+            playlist: videoUrls.map(url => ({
+                file: url,
+            })),
+            autoplay: false,
+            volume: 100,
+            height: "450px",
+            width: "100%",
+            theme: "black",
+            title: "VA Player",
+            poster: "https://xxsliv.com/uploads/posts/2023-05/1683567536_preview.webp"
+        });
+    });
+        
 document.addEventListener('DOMContentLoaded', function() {
         const images = document.querySelectorAll('.popup-trigger');
         images.forEach(img => {
